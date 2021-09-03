@@ -1,7 +1,7 @@
 {
-  "name": "@laythankton/react-native-admob-native-ads",
+  "name": "ltt-react-native-admob-native-ads",
   "version": "0.4.1",
-  "description": "Yes this is react-native-admob-native-ads but no react-native-vector-icons library needed, full version",
+  "description": "Yes this is react-native-admob-native-ads but no react-native-vector-icons library needed",
   "author": "LayThankTon<robert@tapcode.cf>",
   "main": "index.js",
   "license": "MIT",

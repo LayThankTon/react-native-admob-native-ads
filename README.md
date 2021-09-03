@@ -3,7 +3,7 @@
 </div>
 <div align="center">
 	<p>
-	Yes, this is react-native-admob-native-ads but no react-native-vector-icons library needed. This is just a demo, the full version will be integrated into react-native-admob-native-ads in the future.
+	Yes, this is react-native-admob-native-ads but no react-native-vector-icons library needed. You can temporarily use it while waiting for the full version to be integrated into react-native-admob-native-ads.
 	</p>
 <div
 align="center"
