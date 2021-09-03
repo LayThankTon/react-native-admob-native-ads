@@ -14,7 +14,7 @@ export interface StarViewProps {
 
 export default function StarView({
   style = undefined,
-  stars: numStars,
+  numStars,
   size = 15,
   fullIconColor = "#ffd27d",
   halfIconColor = "#ffd27d",

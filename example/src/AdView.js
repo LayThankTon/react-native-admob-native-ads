@@ -8,7 +8,7 @@ import NativeAdView, {
   StarRatingView,
   StoreView,
   TaglineView,
-} from 'react-native-admob-native-ads';
+} from '@laythankton/react-native-admob-native-ads';
 import {MediaView} from './MediaView';
 import {adUnitIDs, Events, Logger} from './utils';
 
