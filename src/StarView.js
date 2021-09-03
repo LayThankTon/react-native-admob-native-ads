@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect, useMemo } from 'react';
-import { View, Image, StyleSheet} from 'react-native';
-import icons from "../assets";
+import { View, StyleSheet, Image} from 'react-native';
+import a from "../assets";
 /*
 export interface StarViewProps {
   style?: StyleProp<ViewStyle>;
@@ -14,7 +14,7 @@ export interface StarViewProps {
 
 export default function StarView({
   style = undefined,
-  numStars,
+  stars,
   size = 15,
   fullIconColor = "#ffd27d",
   halfIconColor = "#ffd27d",
@@ -22,39 +22,74 @@ export default function StarView({
   passRef,
   ...passThroughProps
 }) {
-  
   const viewStyle = useMemo(() => [styles.row, style], [style]);
   const renderIcons = useCallback(
 
-    (_stars, _size, stars = [], emptyStars = 5) => {
+    (_stars, _size, icons = [], emptyStars = 5) => {
       if (typeof stars !== 'number') return null;
       if (typeof _size !== 'number') return null;
 
       if (_stars > 5) _stars = 5;
       if (_stars >= 1) {
         // 1 - 5
-        stars.push(<Image source={icons.star_full} style={{width:_size, height:_size, resizeMode:"contain", tintColor=fullIconColor}} key={`star-full${_stars}`} />);
-        return renderIcons(_stars - 1, _size, stars, emptyStars - 1);
+        icons.push(
+        <Image
+          key={`star-full${_stars}`}
+          source={a.star_full}
+          style={{
+            padding:2,
+            width:_size,
+            height:_size,
+            resizeMode:"contain",
+            tintColor:fullIconColor
+            
+          }}
+        />)
+        return renderIcons(_stars - 1, _size, icons, emptyStars - 1);
       } else if (_stars >= 0.5) {
         // 0 - 1
-        stars.push(<Image source={icons.star_half} style={{width:_size, height:_size, resizeMode:"contain", tintColor=halfIconColor}}  key={`star-half${_stars}`} />);
-        return renderIcons(_stars - 1, _size, stars, emptyStars - 1);
+        icons.push(
+        <Image
+          key={`star-half${_stars}`}
+          source={a.star_half}
+          style={{
+            padding:2,
+            width:_size,
+            height:_size,
+            resizeMode:"contain",
+            tintColor:halfIconColor
+            
+          }}
+        />)
+        return renderIcons(_stars - 1, _size, icons, emptyStars - 1);
       }
       if (emptyStars > 0) {
-        stars.push(<Image source={icons.star_line} style={{width:_size, height:_size, resizeMode:"contain", tintColor=emptyIconColor}} key={`star-empty${emptyStars}`} />);
-        return renderIcons(_stars, _size, stars, emptyStars - 1);
+        icons.push(
+        <Image
+          key={`star-empty${emptyStars}`}
+          source={a.star_line}
+          style={{
+            padding:2,
+            width:_size,
+            height:_size,
+            resizeMode:"contain",
+            tintColor:emptyIconColor
+            
+          }}
+        />)
+        return renderIcons(_stars, _size, icons, emptyStars - 1);
       }
       // 0
-      return stars;
+      return icons;
     },
     [],
   );
 
 
-  if (numStars == null || typeof numStars !== 'number') return null;
+  if (stars == null || typeof stars !== 'number') return null;
 
-  const stars = renderIcons(numStars, size);
-  return <View ref={passRef} style={viewStyle} {...passThroughProps}>{stars}</View>;
+  const icons = renderIcons(stars, size);
+  return <View ref={passRef} style={viewStyle} {...passThroughProps}>{icons}</View>;
 }
 
 const styles = StyleSheet.create({

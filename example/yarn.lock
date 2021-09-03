@@ -1298,9 +1298,8 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@laythankton/react-native-admob-native-ads@..\\laythankton-react-native-admob-native-ads-0.4.1.tgz":
+"@laythankton/react-native-admob-native-ads@../":
   version "0.4.1"
-  resolved "..\\laythankton-react-native-admob-native-ads-0.4.1.tgz#058089526d0d236a4cd049c5f52e8b36bd3fa1cb"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
