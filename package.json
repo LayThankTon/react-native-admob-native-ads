@@ -1,18 +1,18 @@
 {
-  "name": "react-native-admob-native-ads",
+  "name": "ltt-react-native-admob-native-ads",
   "version": "0.4.1",
-  "description": "A simple and robust library for creating & displaying Admob Native Ads in your React Native App using Native Views",
-  "author": "Ammar Ahmed <ammarahmed6506@gmail.com>",
+  "description": "Yes this is react-native-admob-native-ads but no react-native-vector-icons library needed, full version",
+  "author": "LayThankTon<robert@tapcode.cf",
   "main": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ammarahm-ed/react-native-admob-native-ads.git"
+    "url": "git@github.com:LayThankTon/react-native-admob-native-ads.git"
   },
   "bugs": {
-    "url": "https://github.com/ammarahm-ed/react-native-admob-native-ads/issues/"
+    "url": "https://github.com/LayThankTon/react-native-admob-native-ads/issues/"
   },
-  "homepage": "https://github.com/ammarahm-ed/react-native-admob-native-ads",
+  "homepage": "https://github.com/LayThankTon/react-native-admob-native-ads",
   "files": [
     "LICENSE",
     "README.md",

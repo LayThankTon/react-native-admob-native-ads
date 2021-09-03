@@ -3,7 +3,7 @@
 </div>
 <div align="center">
 	<p>
-    A simple and robust library for creating & displaying <a href="https://developers.google.com/admob/android/native/start">Admob Native Advanced Ads</a> in your React Native App using Native Views.
+	Yes, this is react-native-admob-native-ads but no react-native-vector-icons library needed. This is just a demo, the full version will be integrated into react-native-admob-native-ads in the future.
 	</p>
 <div
 align="center"
