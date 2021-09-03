@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {ActivityIndicator, DeviceEventEmitter, Text, View} from 'react-native';
 import NativeAdView, {
+  AdBadge,
   AdvertiserView,
   CallToActionView,
   HeadlineView,
@@ -8,7 +9,7 @@ import NativeAdView, {
   StarRatingView,
   StoreView,
   TaglineView,
-} from '@laythankton/react-native-admob-native-ads';
+} from 'lt-react-native-admob-native-ads';
 import {MediaView} from './MediaView';
 import {adUnitIDs, Events, Logger} from './utils';
 
@@ -181,6 +182,19 @@ export const AdView = React.memo(({index, media, type, loadOnMount = true}) => {
             paddingHorizontal: 10,
             opacity: loading || error || !loaded ? 0 : 1,
           }}>
+          <AdBadge
+            style={{
+              width: 15,
+              height: 15,
+              borderWidth: 1,
+              borderRadius: 2,
+              borderColor: 'green',
+            }}
+            textStyle={{
+              fontSize: 9,
+              color: 'green',
+            }}
+          />
           <IconView
             style={{
               width: 60,

@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect, useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { View, StyleSheet, Image} from 'react-native';
 import a from "../assets";
 /*
@@ -37,7 +37,6 @@ export default function StarView({
           key={`star-full${_stars}`}
           source={a.star_full}
           style={{
-            padding:2,
             width:_size,
             height:_size,
             resizeMode:"contain",
@@ -53,7 +52,6 @@ export default function StarView({
           key={`star-half${_stars}`}
           source={a.star_half}
           style={{
-            padding:2,
             width:_size,
             height:_size,
             resizeMode:"contain",
@@ -69,7 +67,6 @@ export default function StarView({
           key={`star-empty${emptyStars}`}
           source={a.star_line}
           style={{
-            padding:2,
             width:_size,
             height:_size,
             resizeMode:"contain",

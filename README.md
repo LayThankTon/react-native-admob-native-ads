@@ -55,11 +55,15 @@ Yes absolutely you can! There are no limiations. You can design ads that look ju
 
 ## Installation
 
-npm install --save ltt-react-native-admob-native-ads
+```sh
+npm install --save lt-react-native-admob-native-ads
+```
 
 Or:
 
-yarn add ltt-react-native-admob-native-ads
+```sh
+yarn add lt-react-native-admob-native-ads
+```
 
 ## Links
 - [Documentation](https://ammarahm-ed.github.io/react-native-admob-native-ads/docs/introduction/)
