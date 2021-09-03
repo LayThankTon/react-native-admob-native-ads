@@ -54,7 +54,12 @@ Yes absolutely you can! There are no limiations. You can design ads that look ju
 10. Typescript definitions
 
 ## Installation
-- [Installation Guide](https://ammarahm-ed.github.io/react-native-admob-native-ads/docs/installation-3)
+
+npm install --save ltt-react-native-admob-native-ads
+
+Or:
+
+yarn add ltt-react-native-admob-native-ads
 
 ## Links
 - [Documentation](https://ammarahm-ed.github.io/react-native-admob-native-ads/docs/introduction/)
