@@ -1,5 +1,12 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {ActivityIndicator, DeviceEventEmitter, Text, View} from 'react-native';
+import {
+  ActivityIndicator,
+  DeviceEventEmitter,
+  Text,
+  View,
+  Linking,
+  TouchableOpacity,
+} from 'react-native';
 import NativeAdView, {
   AdBadge,
   AdvertiserView,
@@ -12,6 +19,60 @@ import NativeAdView, {
 } from 'lt-react-native-admob-native-ads';
 import {MediaView} from './MediaView';
 import {adUnitIDs, Events, Logger} from './utils';
+
+const OpenURLButton = ({url, children}) => {
+  const handlePress = React.useCallback(async () => {
+    // Checking if the link is supported for links with custom URL scheme.
+    const supported = await Linking.canOpenURL(url);
+
+    if (supported) {
+      // Opening the link with some app, if the URL scheme is "http" the web link should be opened
+      // by some browser in the mobile
+      await Linking.openURL(url);
+    } else {
+      console.log(`Don't know how to open this URL: ${url}`);
+    }
+  }, [url]);
+
+  return <TouchableOpacity onPress={handlePress}>{children}</TouchableOpacity>;
+};
+
+function ReplaceView() {
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+      <AdBadge
+        style={{
+          marginTop: 5,
+          width: 15,
+          height: 15,
+          borderWidth: 1,
+          borderRadius: 2,
+          borderColor: 'green',
+          backgroundColor: 'white',
+        }}
+        textStyle={{
+          fontSize: 9,
+          color: 'green',
+        }}
+      />
+      <OpenURLButton url="https://github.com/LayThankTon">
+        <Text
+          style={{
+            color: 'teal',
+            fontSize: 20,
+            fontWeight: '500',
+          }}>
+          LayThankTon
+        </Text>
+      </OpenURLButton>
+    </View>
+  );
+}
 
 export const AdView = React.memo(({index, media, type, loadOnMount = true}) => {
   const [aspectRatio, setAspectRatio] = useState(1.5);
@@ -169,7 +230,7 @@ export const AdView = React.memo(({index, media, type, loadOnMount = true}) => {
             zIndex: !loading && !error && loaded ? 0 : 10,
           }}>
           {loading && <ActivityIndicator size={28} color="#a9a9a9" />}
-          {error && <Text style={{color: '#a9a9a9'}}>:-(</Text>}
+          {error && <ReplaceView />}
         </View>
 
         <View
@@ -238,12 +299,12 @@ export const AdView = React.memo(({index, media, type, loadOnMount = true}) => {
                 }}
               />
               <StarRatingView
-                starSize={12}
-                fullStarColor="orange"
-                emptyStarColor="gray"
-                containerStyle={{
-                  width: 65,
-                  marginLeft: 10,
+                size={16}
+                fullIconColor="orange"
+                halfIconColor="orange"
+                emptyIconColor="orange"
+                style={{
+                  margin: 10,
                 }}
               />
             </View>
