@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
+import {  Image,  Platform,  SafeAreaView,  StatusBar,  Text,  TouchableOpacity,  View,} from 'react-native';
 import {AdManager} from 'lt-react-native-admob-native-ads';
 import {requestTrackingPermission} from 'react-native-tracking-transparency';
 import {AdView} from './src/AdView';
@@ -34,7 +34,13 @@ const App = () => {
       style={{
         height: '100%',
         width: '100%',
+        paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
       }}>
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="dark-content"
+      />
       <View
         style={{
           flexDirection: 'row',
@@ -42,6 +48,7 @@ const App = () => {
           height: 50,
           paddingHorizontal: 12,
           marginBottom: 10,
+          width: '100%',
         }}>
         {currentRoute && (
           <TouchableOpacity
@@ -91,6 +98,7 @@ const App = () => {
                 fontSize: 18,
                 letterSpacing: 1,
                 textAlign: 'center',
+                color: 'white',
               }}>
               Admob Native Advanced Ads {'\n'} for React Native
             </Text>
@@ -179,7 +187,7 @@ const App = () => {
       )}
 
       <AdView type="image" media={false} />
-
+   
       {currentRoute?.type === 'image' && (
         <View
           style={{
