@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Dimensions, Text, TouchableOpacity} from 'react-native';
-import {NativeMediaView} from 'react-native-admob-native-ads';
+import {NativeMediaView} from 'lt-react-native-admob-native-ads';
 import {Logger} from './utils';
 
 export const MediaView = ({aspectRatio = 1.5}) => {

@@ -4773,8 +4773,9 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-lt-react-native-admob-native-ads@../:
-  version "0.4.2"
+"lt-react-native-admob-native-ads@..\\lt-react-native-admob-native-ads-0.5.0.tgz":
+  version "0.5.0"
+  resolved "..\\lt-react-native-admob-native-ads-0.5.0.tgz#f45d71adc62ea6a7b3307aac8ea5a18869d04f58"
 
 make-dir@^2.0.0, make-dir@^2.1.0:
   version "2.1.0"

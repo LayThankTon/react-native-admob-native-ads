@@ -10,7 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "lt-react-native-admob-native-ads": "../",
+    "lt-react-native-admob-native-ads": "..\\lt-react-native-admob-native-ads-0.5.0.tgz",
     "react": "17.0.1",
     "react-native": "0.64.2",
     "react-native-tracking-transparency": "^0.1.1"
